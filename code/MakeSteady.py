@@ -1,6 +1,3 @@
-from GetPara import get_para
-from sklearn import preprocessing
-
 def make_steady(time_series, diff_num):
     diff = [[],[],[]]
     diff[0] = time_series
