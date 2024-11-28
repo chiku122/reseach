@@ -1,13 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.neighbors import NearestNeighbors
-import pandas as pd
 from GetPara import get_para
 from sklearn import preprocessing
 from MakeSteady import make_steady
-from SeasonalDecompose import plot_stl
 from PrepareTestData import prepare_test_data_by_date
-import datetime as dt
 
 def main():
     df = get_para('N225', 20080901, 20090601)

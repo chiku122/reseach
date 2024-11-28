@@ -1,12 +1,9 @@
-from GetPara import get_para
 import csv
-import numpy as np
-import random as rd
 from scipy import stats
 import matplotlib.pyplot as plt
 
-row_num = 1212
-with open('./data/N225/N=7828/20040101-20240101/stable_random_ab.csv', 'r') as f:
+row_num = 1
+with open('./data/N225/stable_random/x/20040101-20240601.csv', 'r') as f:
     reader = csv.reader(f)
     for _ in range(row_num-1):
         next(reader)
@@ -19,7 +16,13 @@ with open('./data/N225/N=7828/20040101-20240101/stable_random_ab.csv', 'r') as f
     for row in reader:
         ks_value.append(stats.ks_2samp(specified_row, row).statistic)
 
-with open('./data/N225/N=7828/20040101-20240101/ksvalue_ab(20081001).csv', 'w', newline='') as f:
+    # reader = csv.reader(f)
+    # l = [row for row in reader]
+    # ks_value = [0]
+    # for i in range(1,len(l)):
+    #     ks_value.append(stats.ks_2samp(l[i-1], l[i]).statistic)
+
+with open('./data/N225/ksvalue/x/20040101-20240601(20040101).csv', 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(ks_value)
 

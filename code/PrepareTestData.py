@@ -1,10 +1,3 @@
-import matplotlib.pyplot as plt
-from sklearn import preprocessing
-from GetPara import get_para
-import statsmodels.api as sm
-import pandas as pd
-import numpy as np
-from statsmodels.tsa.seasonal import STL
 import datetime as dt
 
 def prepare_test_data_by_ratio(time_series, ratio):

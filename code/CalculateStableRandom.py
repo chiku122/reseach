@@ -2,7 +2,6 @@ from GetPara import get_para
 import csv
 import numpy as np
 import random as rd
-from scipy import stats
 
 def stable_random(alpha, beta, gamma, delta):
     N = 100000
@@ -26,13 +25,13 @@ def stable_random(alpha, beta, gamma, delta):
 
     return x
 
-df = get_para('N225', 20040101, 20240101)
+df = get_para('N225', 20040101, 20240601)
 
 rands = [[] for i in range(len(df))]
 for i in range(len(df)):
     rands[i] = stable_random(df['alpha'][i], df['beta'][i], df['gamma'][i], df['delta'][i])
 
-with open('./data/N225/N=7828/20040101-20240101/stable_random_ab_N7828.csv', 'w', newline='') as f:
+with open('./data/N225/stable_random/x/20040101-20240601.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     for i in range(len(df)):
         writer.writerow(rands[i])
